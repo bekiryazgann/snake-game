@@ -1,0 +1,151 @@
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: calc(100vh - 100px);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.scoreBoard {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.pausedText {
+    color: #FFC107;
+}
+
+.powerUpText {
+    color: #00BCD4;
+    animation: pulse 1s infinite;
+}
+
+.themeButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.themeButton:hover {
+    background-color: #388E3C;
+}
+
+.gameCanvas {
+    border: 3px solid #4CAF50;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+    background-color: #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+/* Theme specific styles */
+.gameCanvas.neon {
+    border-color: #00ff00;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+}
+
+.gameCanvas.retro {
+    border-color: #e74c3c;
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.3);
+}
+
+.gameOver {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+    border: 2px solid #4CAF50;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.gameOver h2 {
+    color: #F44336;
+    margin-bottom: 15px;
+}
+
+.gameOver button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.gameOver button:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+}
+
+.controls {
+    text-align: center;
+    color: #666;
+    margin: 10px 0;
+}
+
+.controls p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.controls ul {
+    list-style: none;
+    padding: 0;
+}
+
+.controls li {
+    margin: 5px 0;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Snake segment animation */
+.snakeSegment {
+    transition: all 0.1s linear;
+}
